@@ -1,0 +1,21 @@
+{
+  "clientId": "ID",
+
+
+  "parentOpened": "ID",
+  "parentApply": "ID",
+  "parentSupport": "ID",
+  "parentComplaint": "ID",
+  "parentHosting": "ID",
+  "parentPartnership": "ID",
+  "parentOther": "ID",
+  "parentYOU" : "ID",
+
+  "roleSupport": "ID",
+
+  
+  "logsTicket": "ID",
+  "ticketChannel": "ID",
+
+  "footerText": "Создан для поддержке YouServer | © 2022"
+}
