@@ -68,8 +68,8 @@ module.exports = {
                 emoji: { name: '📌' }
               },
               {
-                label: 'Покупки',
-                value: 'shop',
+                label: 'Пример',
+                value: 'Example',
                 emoji: { name: '🥇' }
               },
               {
@@ -148,9 +148,9 @@ module.exports = {
               });
             };
           };
-          if (i.values[0] == 'shop') {
+          if (i.values[0] == 'Example') {
             c.edit({
-              parent: client.config.parentshop
+              parent: client.config.parentExample
             });
           };
         });

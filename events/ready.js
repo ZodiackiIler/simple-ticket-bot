@@ -25,7 +25,7 @@ module.exports = {
       })
     }
 
-    const toDelete = 10000;
+    const toDelete = 10;
 
     async function fetchMore(channel, limit) {
       if (!channel) {
@@ -74,7 +74,7 @@ module.exports = {
         if (i < toDelete) {
           setTimeout(function () {
             msg.delete()
-          }, 1000 * i)
+          }, 1 * i)
         }
       })
     })
