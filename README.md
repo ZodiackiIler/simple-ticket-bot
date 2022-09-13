@@ -2,13 +2,13 @@
 
 TicketBot- это билетная касса discord с кнопками, сделанными на Discord.js v13
 
-![](https://github.com/ZodiackiIler/ticket-bot/img)
+![](https://github.com/ZodiackiIler/simple-ticket-bot/img)
 
 ## Как установить?
 
 Вам нужно иметь Node.JS 16+
 ``````bash
-git clone https://github.com/ZodiackiIler/ticket-bot
+git clone https://github.com/ZodiackiIler/simple-ticket-bot
 cd simple-ticket-bot
 npm i
 ``````
@@ -18,24 +18,22 @@ npm i
 ```json
 //config.json
 {
-  "clientId": "id Бота",
+  "clientId": "ID", /*id клиента бота*/
 
-  "language": "ru.yml", //Вы также можете изменить язык, их можно увидеть в папке lang, там же есть пример который можно настроить под себя
+  "parentOpened": "ID", //d Категории в который будет попадать билет, после выбора категории
+  "parentApply": "ID", //Id Категории в который будет попадать билет, после выбора категории
+  "parentSupport": "ID", //Id Категории в который будет попадать билет, после выбора категории
+  "parentComplaint": "ID", //Id Категории в который будет попадать билет, после выбора категории
+  "parentPartnership": "ID", //Id Категории в который будет попадать билет, после выбора категории
+  "parentHosting": "ID", //Id Категории в который будет попадать билет, после выбора категории
+  "parentExample": "ID", //Id Категории в который будет попадать билет, после выбора категории(для вас)
 
-  "parentOpened": "id of категории при открытии билета",
-  "parentTransactions": "id категории, когда билет является билетной операцией",
-  "parentHosting": "id из категории, когда билет является билетом на Хостинг",
-  "parentOther": "id из категории, когда билет является билетом другие",
-  "parentExample": "id из категории, для вашего варианта билета",
-
-
-  "roleSupport": "id поддержки роли",
-
+  "roleSupport": "ID", //ID роли поддержки
   
-  "logsTicket": "id канала журналов регистрации билетов",
-  "ticketChannel": "id канала, по которому отправляется вставка для создания тикета",
-  
-  "footerText": "нижний колонтитул вкладок"
+  "logsTicket": "ID", //Id канала в котором будет история билетов
+  "ticketChannel": "ID", //Id канала в котором будет публикация билета
+
+  "footerText": "Создан для поддержке YouServer | © 2022 " //Текст нижнего колонтитула
 }
 ```
 
