@@ -1,5 +1,4 @@
 const fs = require('fs');
-
 const {
   Client,
   Collection,
@@ -32,7 +31,7 @@ const rest = new REST({
 rest.put(Routes.applicationCommands(clientId), {
     body: slashcommands
   })
-  .then(() => console.log('Успешно зарегистрированные команды приложения.'))
+  .then(() => console.log('Successfully registered application commands.'))
   .catch(console.error);
 
 const client = new Client({
@@ -57,17 +56,6 @@ for (const file of eventFiles) {
   const event = require(`./events/${file}`);
     client.on(event.name, (...args) => event.execute(...args, client));
 };
-
-client.on('ready', () => {
-  console.log(`Bot not ready`);
-  client.user.setPresence({
-      status: 'online',
-      activity: {
-          type: 'WATCHING',
-          name: '/help',
-      },
-  });
-});
 
 client.on('interactionCreate', async interaction => {
   if (!interaction.isCommand()) return;

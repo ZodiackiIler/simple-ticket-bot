@@ -5,10 +5,10 @@ const {
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('add')
-    .setDescription('добавление пользователя')
+    .setDescription('добавить пользователя в билет')
     .addUserOption(option =>
       option.setName('target')
-      .setDescription('добавить участника в тикет')
+      .setDescription('выбрать пользователя')
       .setRequired(true)),
   async execute(interaction, client) {
     const chan = client.channels.cache.get(interaction.channelId);

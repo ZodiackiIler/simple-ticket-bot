@@ -1,22 +1,18 @@
 {
-  "clientId": "ID",
+  "clientId": "968186957433798766", 
 
-  "language": "ru.yml", //Посмотреть можно в папке lang там же можно переделать под себя example.yml
+  "parentOpened": "1018221752217776199", 
+  "parentApply": "1018221752217776199", 
+  "parentSupport": "1018221752217776199",
+  "parentComplaint": "1018221752217776199",
+  "parentPartnership": "1018221752217776199",
+  "parentHosting": "1018221541361713285",
+  "parentExample": "",
 
-  "parentOpened": "ID",
-  "parentApply": "ID",
-  "parentSupport": "ID",
-  "parentComplaint": "ID",
-  "parentHosting": "ID",
-  "parentPartnership": "ID",
-  "parentOther": "ID",
-  "parentExample" : "ID",
-
-  "roleSupport": "ID",
-
+  "roleSupport": "1018222842841665546",
   
-  "logsTicket": "ID",
-  "ticketChannel": "ID",
+  "logsTicket": "1018221664049315871",
+  "ticketChannel": "1018221599150854246",
 
-  "footerText": "Создан для поддержке YouServer | © 2022"
+  "footerText": "Создан для поддержке YouServer | © 2022 "
 }

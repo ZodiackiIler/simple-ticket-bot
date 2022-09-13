@@ -25,5 +25,5 @@ const rest = new REST({
 rest.put(Routes.applicationCommands(clientId), {
     body: commands
   })
-  .then(() => console.log('Успешно зарегистрированные команды приложения.'))
+  .then(() => console.log('Successfully registered application commands.'))
   .catch(console.error);

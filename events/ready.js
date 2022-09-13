@@ -2,13 +2,14 @@ module.exports = {
   name: 'ready',
   async execute(client) {
     console.log('Bot Online!')
+    console.log('Bot Dev Tenebrae');
     const oniChan = client.channels.cache.get(client.config.ticketChannel)
 
     function sendTicketMSG() {
       const embed = new client.discord.MessageEmbed()
         .setColor('ff0000')
-        .setAuthor('Создание билета', client.user.avatarURL())
-        .setDescription('Добро пожаловать в Службу поддержки билетов\n\nСуществует четыре различных типа билетов. Чтобы открыть билет,\nнажми по кнопке\n\nСлужба поддержки\nЗапрос в службу поддержки для всего, что связано с сервером\n• Сервера\n• Поддержка\n• Общее\n• Выдача призов\n• Покупки\n• Сотрудничество\n\n• Общие вопросы и темы\n\nЗлоупотребление наказывается штрафом/баном.')
+        .setAuthor('Создание Билета', client.user.avatarURL())
+        .setDescription('Добро пожаловать в Службу поддержки билетов\n\nСуществует четыре различных типа билетов. Чтобы открыть билет,\nнажми по кнопке\n\nСлужба поддержки\nЗапрос в службу поддержки для всего, что связано с сервером\n• Apply\n• Support\n• General\n• Complaint\n• Hosting\n\n• Apply\n• Hosting\n• Support & Questions\n• General questions and topics\n\nЗа злоупотребление ботом, можно получить бан/мут')
         .setFooter(client.config.footerText, client.user.avatarURL())
       const row = new client.discord.MessageActionRow()
         .addComponents(
@@ -25,7 +26,7 @@ module.exports = {
       })
     }
 
-    const toDelete = 10;
+    const toDelete = 1000;
 
     async function fetchMore(channel, limit) {
       if (!channel) {
@@ -67,17 +68,6 @@ module.exports = {
     const list = await fetchMore(oniChan, toDelete);
 
     let i = 1;
-
-    list.forEach(underList => {
-      underList.forEach(msg => {
-        i++;
-        if (i < toDelete) {
-          setTimeout(function () {
-            msg.delete()
-          }, 1 * i)
-        }
-      })
-    })
 
     setTimeout(() => {
       sendTicketMSG()

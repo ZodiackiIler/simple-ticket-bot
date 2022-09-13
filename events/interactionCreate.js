@@ -38,44 +38,39 @@ module.exports = {
         const embed = new client.discord.MessageEmbed()
           .setColor('ff9600')
           .setAuthor('Причина', ' ')
-          .setDescription('выберите причину, по которой вы открываете билет')
+          .setDescription('Выберите причину, по которой вы открыли билет')
           .setFooter('Билетная система', ' ')
           .setTimestamp();
 
         const row = new client.discord.MessageActionRow()
           .addComponents(
             new client.discord.MessageSelectMenu()
-            .setCustomId('категория')
-            .setPlaceholder('выберите причину, по которой вы открываете билет')
+            .setCustomId('category')
+            .setPlaceholder('выберите причину, по которой вы открыли билет')
             .addOptions([{
-                label: 'Сервера',
+                label: 'Тест',
                 value: 'Apply',
                 emoji: { name: '📑' }
               },
               {
-                label: 'Поддержка',
+                label: 'Support',
                 value: 'Support',
                 emoji: { name: '❓' }
               },
               {
-                label: 'Общее',
+                label: 'Complaint',
                 value: 'Complaint',
                 emoji: { name: '😡' }
               },
               {
-                label: 'Выдача призов',
+                label: 'Hosting',
                 value: 'Hosting',
                 emoji: { name: '📌' }
               },
               {
-                label: 'Пример',
-                value: 'Example',
+                label: 'Partnership',
+                value: 'Partnership',
                 emoji: { name: '🥇' }
-              },
-              {
-                label: 'Сотрудничество',
-                value: 'partnership',
-                emoji: { name: '💰' }
               },
             ]),
           );
@@ -99,14 +94,14 @@ module.exports = {
                   .setColor('ff9600')
                   .setAuthor('Билет', ' ')
                   .setDescription(`<@!${interaction.user.id}> создать **Билет** с указанием причины・ ${i.values[0]}`)
-                  .setFooter('Система билетов', ' ')
+                  .setFooter('Билетная система', ' ')
                   .setTimestamp();
 
                 const row = new client.discord.MessageActionRow()
                   .addComponents(
                     new client.discord.MessageButton()
                     .setCustomId('close-ticket')
-                    .setLabel('закрыть тикет')
+                    .setLabel('закрыть билет')
                     .setEmoji('899745362137477181')
                     .setStyle('DANGER'),
                   );
@@ -122,7 +117,7 @@ module.exports = {
                 });
               });
             };
-            if (i.values[0] == 'Apply') {
+            if (i.values[0] == 'apply') {
               c.edit({
                 parent: client.config.parentApply
               });
@@ -148,11 +143,6 @@ module.exports = {
               });
             };
           };
-          if (i.values[0] == 'Example') {
-            c.edit({
-              parent: client.config.parentExample
-            });
-          };
         });
 
         collector.on('end', collected => {
@@ -177,11 +167,11 @@ module.exports = {
         .addComponents(
           new client.discord.MessageButton()
           .setCustomId('confirm-close')
-          .setLabel('Билет закрыт')
+          .setLabel('Подтвердить закрытие билета')
           .setStyle('DANGER'),
           new client.discord.MessageButton()
           .setCustomId('no')
-          .setLabel('отмена закрытия')
+          .setLabel('Отменить закрытие билета')
           .setStyle('SECONDARY'),
         );
 
@@ -231,7 +221,7 @@ module.exports = {
                 .addComponents(
                   new client.discord.MessageButton()
                   .setCustomId('delete-ticket')
-                  .setLabel('удаление билета')
+                  .setLabel('Удаление билета')
                   .setEmoji('🗑️')
                   .setStyle('DANGER'),
                 );
@@ -268,7 +258,7 @@ module.exports = {
       const chan = guild.channels.cache.get(interaction.channelId);
 
       interaction.reply({
-        content: 'сохранение билета...'
+        content: 'Сохранение билета...'
       });
 
       chan.messages.fetch().then(async (messages) => {
@@ -282,14 +272,14 @@ module.exports = {
           }, {})
           .then(function (urlToPaste) {
             const embed = new client.discord.MessageEmbed()
-              .setAuthor('Журнал билетов', ' ')
-              .setDescription(`📰 Журнал билета \`${chan.id}\` создан <@!${chan.topic}> и удален <@!${interaction.user.id}>\n\nЖурнал: [**Нажми чтобы увидеть журнал**](${urlToPaste})`)
+              .setAuthor('Журнал Билетов', ' ')
+              .setDescription(`📰 Журнал Билетов \`${chan.id}\` создан <@!${chan.topic}> и удален <@!${interaction.user.id}>\n\nЖурнал: [**Нажми чтобы увидеть журнал**](${urlToPaste})`)
               .setColor('2f3136')
               .setTimestamp();
 
             const embed2 = new client.discord.MessageEmbed()
-              .setAuthor('Журнал билетов', ' ')
-              .setDescription(`📰 Журнал твоего билета \`${chan.id}\`: [**Нажми чтобы увидеть журнал**](${urlToPaste})`)
+              .setAuthor('Журнал Билетов', ' ')
+              .setDescription(`📰 Журнал вашего билета \`${chan.id}\`: [**Нажми чтобы увидеть журнал**](${urlToPaste})`)
               .setColor('2f3136')
               .setTimestamp();
 
