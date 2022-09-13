@@ -72,6 +72,11 @@ module.exports = {
                 value: 'Partnership',
                 emoji: { name: '🥇' }
               },
+              {
+                label: 'Example',
+                value: 'Example',
+                emoji: { name: '📑' }
+              },
             ]),
           );
 
@@ -140,6 +145,10 @@ module.exports = {
             if (i.values[0] == 'Partnership') {
               c.edit({
                 parent: client.config.parentPartnership
+              });
+            if (i.values[0] == 'Example') {
+              c.edit({
+                parent: client.config.parentExample
               });
             };
           };
