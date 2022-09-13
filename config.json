@@ -1,7 +1,7 @@
 {
   "clientId": "ID",
 
-  "Language": "ru.yml", //Посмотреть можно в папке lang там же можно переделать под себя example.yml
+  "language": "ru.yml", //Посмотреть можно в папке lang там же можно переделать под себя example.yml
 
   "parentOpened": "ID",
   "parentApply": "ID",
